@@ -10,6 +10,8 @@ public class PlayerController2D : MonoBehaviour
     private float m_runSpeed = 10f;
     [SerializeField, Tooltip("ジャンプ時の力")]
     private float m_jumpPower = 200f;
+    [SerializeField, Tooltip("最高速度")]
+    private float m_maxVelocity_X = 10.0f;
     [SerializeField, Tooltip("地上として判定するレイヤー")]
     private LayerMask m_Groundlayer;
     [SerializeField, Tooltip("地上との判定距離")]
@@ -24,6 +26,8 @@ public class PlayerController2D : MonoBehaviour
     private bool m_onGround = false;
     [SerializeField]
     private Rigidbody2D m_rigidbody2D;
+    [SerializeField]
+    private Vector2 m_velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,10 @@ public class PlayerController2D : MonoBehaviour
             this.m_rigidbody2D.AddForce(Vector2.up * m_jumpPower);
             m_isJump = false;
         }
+        m_velocity = this.m_rigidbody2D.velocity;
+        m_velocity.x = Mathf.Clamp(m_velocity.x,-m_maxVelocity_X,m_maxVelocity_X);
+        this.m_rigidbody2D.velocity = m_velocity;
+        
     }
 
     //地上に居るか
