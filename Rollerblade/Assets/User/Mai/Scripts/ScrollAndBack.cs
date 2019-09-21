@@ -4,9 +4,9 @@ using System.Collections;
 public class ScrollAndBack : MonoBehaviour
 {
 
-    public float speed_ = 0.1f;
-    public float startPositionX_ = -9.61f;
-    public float endPositionX_ = 9.61f;
+    public float speed_ = 5f;
+    public float startPositionX_ = 12.8f;
+    public float endPositionX_ = -12.8f;
 
     private void FixedUpdate()
     {
