@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
     [Header("Parameter")]
-    [SerializeField]
+    [SerializeField,Header("スキル")]
     private Skill m_skill;
 
     [Header("Status")]
@@ -46,7 +46,6 @@ public class PlayerController2D : MonoBehaviour
             m_skill.Activate();
     }
 
-
     //物理挙動
     private void FixedUpdate()
     {
@@ -55,7 +54,6 @@ public class PlayerController2D : MonoBehaviour
             this.m_rigidbody2D.AddForce(Vector2.up *m_character.m_JumpPower);
             m_isJump = false;
         }
-        this.m_rigidbody2D.AddForce(Vector2.right * horizontalMove * m_character.m_Speed);
 
         //最高速度制限
         m_velocity = this.m_rigidbody2D.velocity;

@@ -1,31 +1,29 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
 using UnityEngine.UI;
 
-public class chgScripte : MonoBehaviour
+
+public class chgSprite : MonoBehaviour
 {
-    public GameObject ssprite;
-    public Image image;
-    private Sprite sprite;
+    public GameObject grass;
 
-
-    // Use this for initialization
     void Start()
+    {
+    }
+
+    void Update()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    // ぶつかった瞬間に呼び出される
+    void OnTriggerEnter2D(Collider2D c)
     {
-        // Z キーが押された時
-        if (ssprite.transform.position.x == 10)
+        if (c.gameObject.CompareTag("Player"))
         {
-            sprite = Resources.Load<Sprite>("yuka3");
-            image = this.GetComponent<Image>();
-            image.sprite = sprite;
+            // grassを削除
+            Destroy(grass);
         }
     }
 }
