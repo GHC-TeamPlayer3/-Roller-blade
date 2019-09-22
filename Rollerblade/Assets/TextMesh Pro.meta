@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Rollerblade/Assets/TextMesh Pro.meta
 guid: f54d1bd14bd3ca042bd867b519fee8cc
+=======
+guid: 8e7e8f5a82a3a134e91c54efd2274ea9
+>>>>>>> 6465b7c55a8c7606be0b539812fbbf02d59b19ad:Rollerblade/Assets/TextMesh Pro/Documentation.meta
+=======
+guid: f54d1bd14bd3ca042bd867b519fee8cc
+>>>>>>> 6465b7c55a8c7606be0b539812fbbf02d59b19ad
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
