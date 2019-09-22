@@ -1547,43 +1547,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7065720543058002199, guid: a51d22ab0b8c70141be9fb9020216ce8,
+    - target: {fileID: 7065720543058002200, guid: a51d22ab0b8c70141be9fb9020216ce8,
         type: 3}
-      propertyPath: m_Name
-      value: GoalPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 7065720541795833809, guid: a51d22ab0b8c70141be9fb9020216ce8,
-        type: 3}
-      propertyPath: m_Name
-      value: goal4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7065720542216310648, guid: a51d22ab0b8c70141be9fb9020216ce8,
-        type: 3}
-      propertyPath: m_Name
-      value: goal1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7065720542740961278, guid: a51d22ab0b8c70141be9fb9020216ce8,
-        type: 3}
-      propertyPath: m_Name
-      value: goal3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7065720542899921336, guid: a51d22ab0b8c70141be9fb9020216ce8,
-        type: 3}
-      propertyPath: m_Name
-      value: gola2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7065720543058002202, guid: a51d22ab0b8c70141be9fb9020216ce8,
-        type: 3}
-      propertyPath: grass
+      propertyPath: baseStage
       value: 
-      objectReference: {fileID: 939324333}
+      objectReference: {fileID: 895210406}
+    - target: {fileID: 7065720543058002200, guid: a51d22ab0b8c70141be9fb9020216ce8,
+        type: 3}
+      propertyPath: scroll
+      value: 
+      objectReference: {fileID: 895210407}
     - target: {fileID: 7065720543058002200, guid: a51d22ab0b8c70141be9fb9020216ce8,
         type: 3}
       propertyPath: GoalText
       value: 
       objectReference: {fileID: 1114328822}
-    m_RemovedComponents:
-    - {fileID: 7065720543058002202, guid: a51d22ab0b8c70141be9fb9020216ce8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a51d22ab0b8c70141be9fb9020216ce8, type: 3}
 --- !u!1 &608418465 stripped
 GameObject:
@@ -1970,6 +1949,24 @@ MonoBehaviour:
   speed_: 5
   startPositionX_: 12.8
   endPositionX_: 15
+--- !u!1 &895210406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7065720543258808744, guid: a51d22ab0b8c70141be9fb9020216ce8,
+    type: 3}
+  m_PrefabInstance: {fileID: 599978191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &895210407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7065720543258808750, guid: a51d22ab0b8c70141be9fb9020216ce8,
+    type: 3}
+  m_PrefabInstance: {fileID: 599978191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895210406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605c01ba2aaff0f408aeac25a9054c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910622407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,24 +2023,6 @@ MonoBehaviour:
   StandbySprite: {fileID: 21300000, guid: f41a4d524afd9f8439feb4ec505c4cea, type: 3}
   HoldSprite: {fileID: 21300000, guid: 10e1944bf7e5f414fb143b726d0d948e, type: 3}
   SlashSprite: {fileID: 21300000, guid: 8c33d0de182f91e4bbd722c65a355905, type: 3}
---- !u!1 &939324333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7065720543058002199, guid: a51d22ab0b8c70141be9fb9020216ce8,
-    type: 3}
-  m_PrefabInstance: {fileID: 599978191}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &939324334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939324333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 825c05e7b38eb114fb3912c7940ff679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &988172271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8393909302067269586, guid: 67af3f7bff4f25a4683cfab58dfbf90a,
@@ -3385,6 +3364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoalText: {fileID: 0}
+  scroll: {fileID: 0}
+  baseStage: {fileID: 0}
 --- !u!1 &1562093942
 GameObject:
   m_ObjectHideFlags: 0

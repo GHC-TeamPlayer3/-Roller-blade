@@ -6,7 +6,9 @@ public class Goal : MonoBehaviour
 {
 
     public GameObject GoalText;
-    public ScrollSystem scrollSystem;
+    public ScrollSystem scroll;
+    public GameObject baseStage;
+
 
     // Use this for initialization
     void Start()
@@ -24,11 +26,21 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Player")
-        {
-          //  scrollSystem.enabled = !scrollSystem.enabled;
-            GoalText.SetActive(true);
-        }
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                // grassを削除
+                Destroy(scroll);
+                GoalText.SetActive(true);
+            }
+       // if (collider.gameObject.tag == "Player")
+       // {
+           // Destroy(gameObject.GetComponent<scroll>());
+          // scroll.abled = !scroll.enabled;
+       // }
+       // if (baseStage.activeInHierarchy)
+       // {
+       //     scroll.enabled = !scroll.enabled;
+       // }
     }
 
 }
