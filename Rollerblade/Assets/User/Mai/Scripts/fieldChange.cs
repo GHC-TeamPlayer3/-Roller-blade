@@ -44,9 +44,9 @@ public class fieldChange : MonoBehaviour
     {
 
         /* 右クリックしたとき、オブジェクト非表示 */
-        if (sprite.transform.position.x == 18)
+        if (sprite.transform.position.x >= 50)
         {
-            sprite.SetActive(false);
+          //  gameObject.SetActive(false);
         }
         /*---------------------------------------*/
 
