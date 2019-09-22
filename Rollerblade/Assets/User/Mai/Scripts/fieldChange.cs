@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class fieldChange : MonoBehaviour
 {
+    public GameObject sprite;
 
-  SpriteRenderer MainSpriteRenderer;
+    IEnumerator coroutineMethod;
+    bool isRunning = false;
+
+    //  コルーチン停止
+    public void StopRunTime()
+    {
+        StopAllCoroutines();
+    }
+
+    SpriteRenderer MainSpriteRenderer;
         // publicで宣言し、inspectorで設定可能にする
         public Sprite StandbySprite;
         public Sprite HoldSprite;
         public Sprite SlashSprite;
 
-    void Start()
+   public void Start()
     {
-        // このobjectのSpriteRendererを取得
-        MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+    // このobjectのSpriteRendererを取得
+    MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         StartCoroutine(Change());
 
@@ -30,25 +40,24 @@ public class fieldChange : MonoBehaviour
     }
 
     // 芝生　→　コンクリ
-    IEnumerator Change()
+  public IEnumerator Change()
     {
-        // roop
-        //       while (frame > 0)
-        //        {
-        //            if (transform.position.x >= 12f)
-        //            {
-        //                ChangeStateToHold();
-        //            }
+
+        /* 右クリックしたとき、オブジェクト非表示 */
+        if (sprite.transform.position.x == 18)
+        {
+            sprite.SetActive(false);
+        }
+        /*---------------------------------------*/
 
         while (true)
-        {
+            {
             Debug.Log("loop Coroutine");
             yield return new WaitForSeconds(100f);
-        }
+            }
 
         yield return null;
-            Debug.Log("Change");
-//            frame--;
-        }
+            Debug.Log("Change");  
     }
-//}
+}
+
