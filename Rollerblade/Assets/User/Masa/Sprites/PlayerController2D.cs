@@ -16,6 +16,10 @@ public class PlayerController2D : MonoBehaviour
     private LayerMask m_Groundlayer;
     [SerializeField, Tooltip("地上との判定距離")]
     private float m_rayDistance = 2.0f;
+    [SerializeField, Tooltip("Animator")]
+    private Animator m_animator;
+    [SerializeField, Tooltip("X位置の変更をさせない")]
+    private bool m_IsNotChangePos = false;
 
     [Header("Status")]
     [SerializeField]
@@ -33,29 +37,40 @@ public class PlayerController2D : MonoBehaviour
     void Start()
     {
         this.m_rigidbody2D = this.GetComponent<Rigidbody2D>();
+        if (this.m_IsNotChangePos)
+            this.m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.horizontalMove = this.GetHorizontal() * m_runSpeed;
         this.m_onGround = Check_OnGround();
-        this.m_isJump = Input.GetButtonDown("Jump") && m_onGround;
+        if (!m_IsNotChangePos)
+        {
+            this.horizontalMove = this.GetHorizontal() * m_runSpeed;
+            this.m_isJump = Input.GetButtonDown("Jump") && m_onGround;
+            this.m_animator.SetFloat("Speed", Mathf.Abs(m_velocity.x));
+        }
+        else
+        {
+            this.m_isJump = Input.GetButtonDown("Jump") && m_onGround;
+            this.m_animator.SetFloat("Speed",0.1f);
+        }
     }
 
     //物理挙動
     private void FixedUpdate()
     {
-        this.m_rigidbody2D.AddForce(Vector2.right * horizontalMove);
         if (m_isJump)
         {
             this.m_rigidbody2D.AddForce(Vector2.up * m_jumpPower);
             m_isJump = false;
         }
+        this.m_rigidbody2D.AddForce(Vector2.right * horizontalMove);
         m_velocity = this.m_rigidbody2D.velocity;
-        m_velocity.x = Mathf.Clamp(m_velocity.x,-m_maxVelocity_X,m_maxVelocity_X);
+        m_velocity.x = Mathf.Clamp(m_velocity.x, -m_maxVelocity_X, m_maxVelocity_X);
         this.m_rigidbody2D.velocity = m_velocity;
-        
     }
 
     //地上に居るか
