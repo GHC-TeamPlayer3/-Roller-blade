@@ -16,6 +16,8 @@ public class PlayerController2D : MonoBehaviour
     private LayerMask m_Groundlayer;
     [SerializeField, Tooltip("地上との判定距離")]
     private float m_rayDistance = 2.0f;
+    [SerializeField, Tooltip("Animator")]
+    private Animator m_animator;
 
     [Header("Status")]
     [SerializeField]
@@ -41,6 +43,7 @@ public class PlayerController2D : MonoBehaviour
         this.horizontalMove = this.GetHorizontal() * m_runSpeed;
         this.m_onGround = Check_OnGround();
         this.m_isJump = Input.GetButtonDown("Jump") && m_onGround;
+        this.m_animator.SetFloat("Speed",Mathf.Abs(m_velocity.x));
     }
 
     //物理挙動
@@ -54,8 +57,7 @@ public class PlayerController2D : MonoBehaviour
         }
         m_velocity = this.m_rigidbody2D.velocity;
         m_velocity.x = Mathf.Clamp(m_velocity.x,-m_maxVelocity_X,m_maxVelocity_X);
-        this.m_rigidbody2D.velocity = m_velocity;
-        
+        this.m_rigidbody2D.velocity = m_velocity;  
     }
 
     //地上に居るか
