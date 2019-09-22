@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7674635761467551922}
   - component: {fileID: 3949433693423269294}
   - component: {fileID: 887883644385544608}
+  - component: {fileID: 2391010786645356048}
   - component: {fileID: 2797499111786150255}
   m_Layer: 8
   m_Name: Ground6
@@ -50,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751386143f647dd41b90211184c9e207, type: 2}
+  - {fileID: 2100000, guid: b33a67e1f11f686409f62e5f081edabe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 4.8, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -101,12 +102,28 @@ BoxCollider2D:
     oldSize: {x: 4.8, y: 2.2}
     newSize: {x: 4.8, y: 2.2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.832981, y: 2.2038069}
   m_EdgeRadius: 0
+--- !u!114 &2391010786645356048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27618329220877383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84e7897c27be614584c4a3a0f442aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  StandbySprite: {fileID: 21300000, guid: f41a4d524afd9f8439feb4ec505c4cea, type: 3}
+  HoldSprite: {fileID: 21300000, guid: 10e1944bf7e5f414fb143b726d0d948e, type: 3}
+  SlashSprite: {fileID: 21300000, guid: 8c33d0de182f91e4bbd722c65a355905, type: 3}
 --- !u!114 &2797499111786150255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +150,7 @@ GameObject:
   - component: {fileID: 4413815737721091343}
   - component: {fileID: 4413815737721091337}
   - component: {fileID: 4413815737721091342}
+  - component: {fileID: 2335766779534999081}
   - component: {fileID: 167346441675689573}
   m_Layer: 8
   m_Name: Ground2
@@ -172,7 +190,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751386143f647dd41b90211184c9e207, type: 2}
+  - {fileID: 2100000, guid: b33a67e1f11f686409f62e5f081edabe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,7 +214,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 4.8, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -223,12 +241,28 @@ BoxCollider2D:
     oldSize: {x: 4.8, y: 2.2}
     newSize: {x: 4.8, y: 2.2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.832981, y: 2.2038069}
   m_EdgeRadius: 0
+--- !u!114 &2335766779534999081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413815737721091340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84e7897c27be614584c4a3a0f442aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  StandbySprite: {fileID: 21300000, guid: f41a4d524afd9f8439feb4ec505c4cea, type: 3}
+  HoldSprite: {fileID: 21300000, guid: 10e1944bf7e5f414fb143b726d0d948e, type: 3}
+  SlashSprite: {fileID: 21300000, guid: 8c33d0de182f91e4bbd722c65a355905, type: 3}
 --- !u!114 &167346441675689573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +289,7 @@ GameObject:
   - component: {fileID: 4413815738011852916}
   - component: {fileID: 4413815738011852918}
   - component: {fileID: 4413815738011852919}
+  - component: {fileID: 8616771765418577478}
   - component: {fileID: 5653681274462186610}
   m_Layer: 8
   m_Name: Ground3
@@ -294,7 +329,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751386143f647dd41b90211184c9e207, type: 2}
+  - {fileID: 2100000, guid: b33a67e1f11f686409f62e5f081edabe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,7 +353,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 4.8, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -345,12 +380,28 @@ BoxCollider2D:
     oldSize: {x: 4.8, y: 2.2}
     newSize: {x: 4.8, y: 2.2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.832981, y: 2.2038069}
   m_EdgeRadius: 0
+--- !u!114 &8616771765418577478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413815738011852917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84e7897c27be614584c4a3a0f442aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  StandbySprite: {fileID: 21300000, guid: f41a4d524afd9f8439feb4ec505c4cea, type: 3}
+  HoldSprite: {fileID: 21300000, guid: 10e1944bf7e5f414fb143b726d0d948e, type: 3}
+  SlashSprite: {fileID: 21300000, guid: 8c33d0de182f91e4bbd722c65a355905, type: 3}
 --- !u!114 &5653681274462186610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,10 +425,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4413815738051072521}
+  - component: {fileID: 1915492090255577450}
   - component: {fileID: 4413815738051072520}
   - component: {fileID: 4413815738051072523}
   - component: {fileID: 9133660887776770764}
+  - component: {fileID: 2901968765373353957}
   m_Layer: 8
   m_Name: Ground1
   m_TagString: Untagged
@@ -385,20 +437,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4413815738051072521
-Transform:
+--- !u!224 &1915492090255577450
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4413815738051072526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.2, y: -4.3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8393909302067269586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.2, y: -4.3}
+  m_SizeDelta: {x: 4.8, y: 2.2}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4413815738051072520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -416,7 +473,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751386143f647dd41b90211184c9e207, type: 2}
+  - {fileID: 2100000, guid: b33a67e1f11f686409f62e5f081edabe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -488,6 +545,14 @@ MonoBehaviour:
   speed_: 0.1
   startPositionX_: 7.85
   endPositionX_: -7.85
+--- !u!222 &2901968765373353957
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413815738051072526}
+  m_CullTransparentMesh: 0
 --- !u!1 &4413815738225456587
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +564,7 @@ GameObject:
   - component: {fileID: 4413815738225456586}
   - component: {fileID: 4413815738225456580}
   - component: {fileID: 4413815738225456581}
+  - component: {fileID: 3316773681558854088}
   - component: {fileID: 3682167005850053890}
   m_Layer: 8
   m_Name: Ground4
@@ -538,7 +604,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751386143f647dd41b90211184c9e207, type: 2}
+  - {fileID: 2100000, guid: b33a67e1f11f686409f62e5f081edabe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -562,7 +628,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 4.8, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -589,12 +655,28 @@ BoxCollider2D:
     oldSize: {x: 4.8, y: 2.2}
     newSize: {x: 4.8, y: 2.2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.832981, y: 2.2038069}
   m_EdgeRadius: 0
+--- !u!114 &3316773681558854088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413815738225456587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84e7897c27be614584c4a3a0f442aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  StandbySprite: {fileID: 21300000, guid: f41a4d524afd9f8439feb4ec505c4cea, type: 3}
+  HoldSprite: {fileID: 21300000, guid: 10e1944bf7e5f414fb143b726d0d948e, type: 3}
+  SlashSprite: {fileID: 21300000, guid: 8c33d0de182f91e4bbd722c65a355905, type: 3}
 --- !u!114 &3682167005850053890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +719,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4413815738051072521}
+  - {fileID: 1915492090255577450}
   - {fileID: 4413815737721091343}
   - {fileID: 4413815738011852916}
   - {fileID: 4413815738225456586}
@@ -657,6 +739,7 @@ GameObject:
   - component: {fileID: 328929859778675727}
   - component: {fileID: 2698582521020741598}
   - component: {fileID: 5921095924265194473}
+  - component: {fileID: 8144803310425851628}
   - component: {fileID: 1283371895139355664}
   m_Layer: 8
   m_Name: Ground5
@@ -696,7 +779,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751386143f647dd41b90211184c9e207, type: 2}
+  - {fileID: 2100000, guid: b33a67e1f11f686409f62e5f081edabe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -720,7 +803,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 4.8, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -747,12 +830,28 @@ BoxCollider2D:
     oldSize: {x: 4.8, y: 2.2}
     newSize: {x: 4.8, y: 2.2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.832981, y: 2.2038069}
   m_EdgeRadius: 0
+--- !u!114 &8144803310425851628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130053554299103576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84e7897c27be614584c4a3a0f442aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  StandbySprite: {fileID: 21300000, guid: f41a4d524afd9f8439feb4ec505c4cea, type: 3}
+  HoldSprite: {fileID: 21300000, guid: 10e1944bf7e5f414fb143b726d0d948e, type: 3}
+  SlashSprite: {fileID: 21300000, guid: 8c33d0de182f91e4bbd722c65a355905, type: 3}
 --- !u!114 &1283371895139355664
 MonoBehaviour:
   m_ObjectHideFlags: 0

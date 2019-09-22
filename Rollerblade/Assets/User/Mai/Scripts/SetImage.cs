@@ -4,9 +4,9 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
-public class chgScripte : MonoBehaviour
+public class SetImage : MonoBehaviour
 {
-    public GameObject ssprite;
+
     public Image image;
     private Sprite sprite;
 
@@ -21,7 +21,7 @@ public class chgScripte : MonoBehaviour
     void Update()
     {
         // Z キーが押された時
-        if (ssprite.transform.position.x == 10)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             sprite = Resources.Load<Sprite>("yuka3");
             image = this.GetComponent<Image>();
