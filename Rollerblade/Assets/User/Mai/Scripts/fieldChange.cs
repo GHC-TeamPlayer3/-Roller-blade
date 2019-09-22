@@ -16,7 +16,11 @@ public class fieldChange : MonoBehaviour
         // このobjectのSpriteRendererを取得
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
-        StartCoroutine("Change");
+        StartCoroutine(Change());
+
+        Coroutine retC = StartCoroutine(Change());
+
+        StopCoroutine(retC);
     }
 
     // 何かしらのタイミングで呼ばれる
@@ -24,13 +28,27 @@ public class fieldChange : MonoBehaviour
     {
         MainSpriteRenderer.sprite = HoldSprite;
     }
- 
 
+    // 芝生　→　コンクリ
     IEnumerator Change()
     {
-        // 芝生　→　コンクリ
+        // roop
+        //       while (frame > 0)
+        //        {
+        //            if (transform.position.x >= 12f)
+        //            {
+        //                ChangeStateToHold();
+        //            }
 
+        while (true)
+        {
+            Debug.Log("loop Coroutine");
+            yield return new WaitForSeconds(100f);
+        }
 
-        yield return new WaitForSeconds(40f);
+        yield return null;
+            Debug.Log("Change");
+//            frame--;
+        }
     }
-}
+//}
