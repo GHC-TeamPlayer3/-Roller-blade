@@ -1,24 +1,39 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
-guid: f54d1bd14bd3ca042bd867b519fee8cc
-=======
-<<<<<<< HEAD:Rollerblade/Assets/TextMesh Pro/Documentation.meta
-guid: 8e7e8f5a82a3a134e91c54efd2274ea9
-=======
-guid: f54d1bd14bd3ca042bd867b519fee8cc
->>>>>>> 6f4c8c92fec35ffded5e889a13f41526011caba9:Rollerblade/Assets/TextMesh Pro.meta
->>>>>>> 6f4c8c92fec35ffded5e889a13f41526011caba9
-=======
+<<<<<<< HEAD
 <<<<<<< HEAD:Rollerblade/Assets/TextMesh Pro.meta
+=======
+>>>>>>> 8cd2115927a7bffda93e78b8f6708225e7a4c38c
 guid: f54d1bd14bd3ca042bd867b519fee8cc
 =======
 guid: 8e7e8f5a82a3a134e91c54efd2274ea9
 >>>>>>> 6465b7c55a8c7606be0b539812fbbf02d59b19ad:Rollerblade/Assets/TextMesh Pro/Documentation.meta
 =======
 guid: f54d1bd14bd3ca042bd867b519fee8cc
+<<<<<<< HEAD
+>>>>>>> 6465b7c55a8c7606be0b539812fbbf02d59b19ad
+=======
+=======
+>>>>>>> 6f4c8c92fec35ffded5e889a13f41526011caba9:Rollerblade/Assets/TextMesh Pro.meta
+>>>>>>> 6f4c8c92fec35ffded5e889a13f41526011caba9
+=======
+<<<<<<< HEAD:Rollerblade/Assets/TextMesh Pro.meta
+>>>>>>> 8cd2115927a7bffda93e78b8f6708225e7a4c38c
+guid: f54d1bd14bd3ca042bd867b519fee8cc
+=======
+<<<<<<< HEAD:Rollerblade/Assets/TextMesh Pro/Documentation.meta
+guid: 8e7e8f5a82a3a134e91c54efd2274ea9
+=======
+guid: f54d1bd14bd3ca042bd867b519fee8cc
+<<<<<<< HEAD
+>>>>>>> 6f4c8c92fec35ffded5e889a13f41526011caba9:Rollerblade/Assets/TextMesh Pro.meta
+>>>>>>> 6f4c8c92fec35ffded5e889a13f41526011caba9
+>>>>>>> b6c2419fecfa1ab4e7ced5cbb246e20af354083b
+=======
 >>>>>>> 6465b7c55a8c7606be0b539812fbbf02d59b19ad
 >>>>>>> 290b0e78384ea70869c48c8ecace2d76086ec7ca
+>>>>>>> 8cd2115927a7bffda93e78b8f6708225e7a4c38c
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -7,12 +7,10 @@ public class PlayerState : MonoBehaviour
     [Header("Parameter")]
     [SerializeField, Tooltip("地上として判定するレイヤー")]
     public LayerMask m_Groundlayer;
+    [SerializeField,Tooltip("スピードアップするタグ")]
+    public string m_SpeedTag;
     [SerializeField, Tooltip("地上との判定距離")]
     public float m_rayDistance = 2.0f;
-
-    [Header("Status")]
-    [SerializeField,Tooltip("追尾キャラクター")]
-    public List<Character> characters;
 
     public bool m_IsInvincible { get; private set; }
 

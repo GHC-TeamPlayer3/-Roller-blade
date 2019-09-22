@@ -25,14 +25,11 @@ public class Character : MonoBehaviour
     [SerializeField, Tooltip("Animator")]
     private Animator m_animator;
 
-    SpriteRenderer m_renderer;
-
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
-        m_renderer = GetComponent<SpriteRenderer>();
 
         this.m_rigidbody2D.mass = m_Mass;
     }
