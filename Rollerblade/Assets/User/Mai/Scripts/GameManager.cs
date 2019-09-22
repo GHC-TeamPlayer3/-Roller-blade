@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
 
-            Sphere.SetActive(true);
+            //Sphere.SetActive(true);
 
         }
 
