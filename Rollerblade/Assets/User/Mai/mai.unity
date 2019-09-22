@@ -350,6 +350,11 @@ PrefabInstance:
       propertyPath: m_playerState
       value: 
       objectReference: {fileID: 1586448398}
+    - target: {fileID: 8492350878265879238, guid: 7601ea5b16fa8fd479b1fa50467fa27b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7601ea5b16fa8fd479b1fa50467fa27b, type: 3}
 --- !u!1 &163661597 stripped
@@ -1547,6 +1552,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7065720542931089961, guid: a51d22ab0b8c70141be9fb9020216ce8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065720542931089961, guid: a51d22ab0b8c70141be9fb9020216ce8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065720542931089961, guid: a51d22ab0b8c70141be9fb9020216ce8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065720542931089961, guid: a51d22ab0b8c70141be9fb9020216ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7065720543058002200, guid: a51d22ab0b8c70141be9fb9020216ce8,
         type: 3}
       propertyPath: baseStage
@@ -2141,7 +2166,7 @@ RectTransform:
   m_GameObject: {fileID: 1114328822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 822019965}
   m_RootOrder: 0
@@ -2173,10 +2198,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
+    m_FontSize: 10
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -2184,7 +2209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GOAL!!!
+  m_Text: "\u30AD\u30FC\u30F3\u30B3\u30FC\u30F3\u30AB\u30FC\u30F3\u30B3\u30FC\u30F3\uFF01\uFF01"
 --- !u!222 &1114328825
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3365,7 +3390,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoalText: {fileID: 0}
   scroll: {fileID: 0}
-  baseStage: {fileID: 0}
 --- !u!1 &1562093942
 GameObject:
   m_ObjectHideFlags: 0
