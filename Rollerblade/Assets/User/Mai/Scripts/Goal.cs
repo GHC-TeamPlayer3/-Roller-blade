@@ -2,17 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gole : MonoBehaviour
+public class Goal : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject GoalText;
+    public ScrollSystem scroll;
+
     void Start()
     {
-        
+        // GOALテキストを非表示
+        GoalText.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    // ぶつかった瞬間に呼び出される
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            // ScrollSystemコンポーネントを削除
+            Destroy(scroll);
+            // GOALテキストを表示
+            GoalText.SetActive(true);
+        }
     }
 }
+
+ 
+   // public GameObject baseStage;
+
+       // if (collider.gameObject.tag == "Player")
+       // {
+           // Destroy(gameObject.GetComponent<scroll>());
+          // scroll.abled = !scroll.enabled;
+       // }
+       // if (baseStage.activeInHierarchy)
+       // {
+       //     scroll.enabled = !scroll.enabled;
+       // }
