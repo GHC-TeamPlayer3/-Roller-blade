@@ -37,7 +37,7 @@ public class PlayerController2D : MonoBehaviour
         IsInvincible = InvincibleTime >= 0.0f;
         InvincibleTime -= IsInvincible ? Time.deltaTime : 0.0f;
 
-        if (Input.GetKeyUp(KeyCode.Q)) this.ChangeActiveCharacter();
+        if (Input.GetButtonUp("Change")) this.ChangeActiveCharacter();
 
         //アクティブ無い
         if (ActiveCharacter == null) return;
@@ -75,6 +75,7 @@ public class PlayerController2D : MonoBehaviour
             if (playerState.characters.Count == 0)
             {
                 CharacterEnd();
+                return;
             }
             SetAcitiveCharacter(playerState.characters[0]);
             InvincibleTime = 2.0f;
@@ -111,8 +112,6 @@ public class PlayerController2D : MonoBehaviour
         m_velocity = rigidbody2D.velocity;
         m_velocity.y = Mathf.Clamp(m_velocity.y,-ActiveCharacter.m_MaxVelocity, ActiveCharacter.m_MaxVelocity);
         rigidbody2D.velocity = m_velocity;
-
-        
     }
 
     //アクティブなキャラクターを変更
