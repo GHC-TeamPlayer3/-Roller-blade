@@ -120,6 +120,7 @@ public class Character : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!IsActiveCharacter) return;
+        
         //障害物に触れた
         if (collision.CompareTag("Obstacle"))
         {
@@ -127,10 +128,6 @@ public class Character : MonoBehaviour
             GimickState gimickstate = collision.GetComponent<GimickState>();
             if (gimickstate != null) speed = gimickstate.GetDownSpeed();
             scrollSystem.AddSpeed(speed);
-        }
-
-        if (collision.CompareTag("DeadObject"))
-        {
             IsDead = true;
         }
     }

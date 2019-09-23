@@ -64,7 +64,7 @@ public class PlayerController2D : MonoBehaviour
             ActiveCharacter.skill.Activate();
 
         //死亡
-        if (ActiveCharacter.IsDead)
+        if (ActiveCharacter.IsDead && !IsInvincible)
         {
             //先頭を削除
             playerState.characters.RemoveAt(0);
@@ -77,6 +77,7 @@ public class PlayerController2D : MonoBehaviour
                 CharacterEnd();
             }
             SetAcitiveCharacter(playerState.characters[0]);
+            InvincibleTime = 2.0f;
         }
             
     }
