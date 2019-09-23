@@ -570,13 +570,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 287434925}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &371915175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3751569761270832741, guid: 65263a0b060f3ac4091979f51cd90b99,
+    type: 3}
+  m_PrefabInstance: {fileID: 1110252740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &371915179 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3751569761270832735, guid: 65263a0b060f3ac4091979f51cd90b99,
     type: 3}
   m_PrefabInstance: {fileID: 1110252740}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 371915175}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5fdf7f3260491849b8dd1bbd899bbbb, type: 3}
@@ -679,7 +685,7 @@ SpriteRenderer:
   m_Size: {x: 28.000002, y: 10.800001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &521148562
@@ -2029,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: 3751569761270832735, guid: 65263a0b060f3ac4091979f51cd90b99,
         type: 3}
       propertyPath: m_Speed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4740782921976558776, guid: 65263a0b060f3ac4091979f51cd90b99,
         type: 3}
@@ -2808,7 +2814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c728b755a0ea124a8e34a6c703b81cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 371915175}
 --- !u!4 &1550318077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1184592723836007406, guid: b642118ffc1149c4fa0e2177e314fb3c,
