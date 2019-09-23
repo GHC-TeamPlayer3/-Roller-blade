@@ -37,6 +37,8 @@ public class PlayerController2D : MonoBehaviour
         IsInvincible = InvincibleTime >= 0.0f;
         InvincibleTime -= IsInvincible ? Time.deltaTime : 0.0f;
 
+        if (Input.GetKeyUp(KeyCode.Q)) this.ChangeActiveCharacter();
+
         //アクティブ無い
         if (ActiveCharacter == null) return;
 
@@ -60,6 +62,23 @@ public class PlayerController2D : MonoBehaviour
         //スキル
         if (Input.GetButtonDown("Fire3"))
             ActiveCharacter.skill.Activate();
+
+        //死亡
+        if (ActiveCharacter.IsDead)
+        {
+            //先頭を削除
+            playerState.characters.RemoveAt(0);
+            Character character = ActiveCharacter;
+            character.GetComponent<Character>().enabled = false;
+            character.m_CircleCol.enabled = false;
+            character.transform.SetParent(scrollSystem.transform);
+            if (playerState.characters.Count == 0)
+            {
+                CharacterEnd();
+            }
+            SetAcitiveCharacter(playerState.characters[0]);
+        }
+            
     }
 
     //物理挙動
@@ -69,12 +88,8 @@ public class PlayerController2D : MonoBehaviour
         if (IsJump)
         {
             Vector2 vector = Vector2.up * ActiveCharacter.m_JumpPower;
-            rigidbody2D.AddForce(vector);
-
             for (int n = 0; n < playerState.characters.Count; n++)
-            {
-                StartCoroutine(playerState.characters[n].AddRigidbody(vector, 0.2f * (float)(n+1)));
-            }
+                StartCoroutine(playerState.characters[n].AddRigidbody(vector, 0.2f * (float)n));
 
             IsJump = false;
         }
@@ -107,5 +122,29 @@ public class PlayerController2D : MonoBehaviour
 
         scrollSystem.SetBaseSpeed(ActiveCharacter.m_Speed);
         rigidbody2D = ActiveCharacter.GetComponent<Rigidbody2D>();
+    }
+
+    public void ChangeActiveCharacter()
+    {
+        if (playerState.characters.Count == 1) return;
+        Character character = ActiveCharacter;
+        Vector3 pos = character.transform.localPosition;
+        character = playerState.characters[0];
+        playerState.characters.RemoveAt(0);
+        playerState.characters.Add(character); //先頭のやつを後方に
+
+        character = playerState.characters[0];
+        SetAcitiveCharacter(character);
+
+        for(int n = 0; n < playerState.characters.Count; n++)
+        {
+            playerState.characters[n].transform.localPosition = new Vector3(-1.5f * n + pos.x,pos.y,0.0f);
+        }
+    }
+
+    //全て死んだ
+    public void CharacterEnd()
+    {
+        scrollSystem.Stop();
     }
 }

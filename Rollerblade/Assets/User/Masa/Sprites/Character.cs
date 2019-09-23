@@ -56,7 +56,7 @@ public class Character : MonoBehaviour
     public Character forwardChara;
     public Character backChara;
 
-    private Vector3 oldPosition;
+    public bool IsDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -112,6 +112,7 @@ public class Character : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (IsDead) return;
         m_CircleCol.enabled = OnGround;
     }
 
@@ -128,6 +129,10 @@ public class Character : MonoBehaviour
             scrollSystem.AddSpeed(speed);
         }
 
+        if (collision.CompareTag("DeadObject"))
+        {
+            IsDead = true;
+        }
     }
 
     //地上に居るか

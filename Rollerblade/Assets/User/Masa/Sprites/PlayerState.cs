@@ -26,5 +26,4 @@ public class PlayerState : MonoBehaviour
     {
 
     }
-
 }
