@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3751569761270832734}
   - component: {fileID: 3751569761270832737}
   - component: {fileID: 3751569761270832735}
-  - component: {fileID: 3751569761270832736}
   - component: {fileID: 4740782921976558776}
   - component: {fileID: 3751569761270832762}
   - component: {fileID: 5739103826593474992}
@@ -121,33 +120,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerState: {fileID: 0}
   m_Speed: 10
+  m_AddSpeed: 0.1
+  m_DownSpeed: -0.1
   m_MaxVelocity: 10
   m_Mass: 1
   m_JumpPower: 400
-  m_FloatPower: 0
+  skill: {fileID: 0}
   m_rigidbody2D: {fileID: 0}
   m_animator: {fileID: 0}
   m_CircleCol: {fileID: 0}
---- !u!114 &3751569761270832736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3751569761270832741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4409e3678a51da345b16525338c5c851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_skill: {fileID: 4740782921976558776}
-  horizontalMove: 0
-  m_isJump: 0
-  m_isDoubleJump: 0
-  m_onGround: 0
-  m_rigidbody2D: {fileID: 0}
-  m_velocity: {x: 0, y: 0}
-  m_character: {fileID: 0}
+  GoundCollider: {fileID: 0}
+  IsActiveCharacter: 0
+  state: 0
+  IsDoubleJump: 0
+  CanDoubleJump: 0
+  OnGround: 0
+  scrollSystem: {fileID: 0}
+  forwardChara: {fileID: 0}
+  backChara: {fileID: 0}
 --- !u!114 &4740782921976558776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +201,7 @@ GameObject:
   - component: {fileID: 5691444368721795179}
   m_Layer: 0
   m_Name: Col
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,6 +233,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00071024895, y: -0.6891161}
+  m_Offset: {x: 0.0041970015, y: -0.7}
   serializedVersion: 2
-  m_Radius: 0.5203912
+  m_Radius: 0.5
