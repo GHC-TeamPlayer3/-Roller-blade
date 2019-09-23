@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    //　テキスト制御
     public GameObject GoalText;
+    // スクロール制御
     public ScrollSystem scroll;
+    // 音楽
     public AudioSource audioSource;
+    // リザルト制御
+    public GameObject clear;
 
     void Start()
     {
@@ -31,6 +36,8 @@ public class Goal : MonoBehaviour
             GoalText.SetActive(true);
             // BGMを停止
             audioSource.Stop();
+            // 時間内にゴールしたら
+
         }
     }
 }
