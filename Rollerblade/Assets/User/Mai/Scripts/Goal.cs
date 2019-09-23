@@ -6,11 +6,13 @@ public class Goal : MonoBehaviour
 {
     public GameObject GoalText;
     public ScrollSystem scroll;
+    public AudioSource audioSource;
 
     void Start()
     {
         // GOALテキストを非表示
         GoalText.SetActive(false);
+        audioSource.Play();
     }
 
     void Update()
@@ -27,19 +29,8 @@ public class Goal : MonoBehaviour
             Destroy(scroll);
             // GOALテキストを表示
             GoalText.SetActive(true);
+            // BGMを停止
+            audioSource.Stop();
         }
     }
 }
-
- 
-   // public GameObject baseStage;
-
-       // if (collider.gameObject.tag == "Player")
-       // {
-           // Destroy(gameObject.GetComponent<scroll>());
-          // scroll.abled = !scroll.enabled;
-       // }
-       // if (baseStage.activeInHierarchy)
-       // {
-       //     scroll.enabled = !scroll.enabled;
-       // }
