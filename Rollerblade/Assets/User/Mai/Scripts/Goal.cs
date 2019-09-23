@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Goal : MonoBehaviour
 {
+    // 時間の取得
+    public Timer timer;
     //　テキスト制御
     public GameObject GoalText;
     // スクロール制御
@@ -11,12 +14,17 @@ public class Goal : MonoBehaviour
     // 音楽
     public AudioSource audioSource;
     // リザルト制御
-    public GameObject clear;
+    public GameObject Result_Success;
+    public GameObject Result_False;
 
     void Start()
     {
         // GOALテキストを非表示
         GoalText.SetActive(false);
+        // リザルト画像を非表示
+        Result_Success.SetActive(false);
+        Result_False.SetActive(false);
+        // BGMを開始
         audioSource.Play();
     }
 
@@ -32,11 +40,24 @@ public class Goal : MonoBehaviour
         {
             // ScrollSystemコンポーネントを削除
             Destroy(scroll);
-            // GOALテキストを表示
-            GoalText.SetActive(true);
-            // BGMを停止
-            audioSource.Stop();
             // 時間内にゴールしたら
+            if ( timer)
+            {
+                // BGMを停止
+                audioSource.Stop();
+                // GOALテキストを表示
+                GoalText.SetActive(true);
+                // リザルトSuccess画像を表示
+                Result_Success.SetActive(true);
+            }
+
+            // 時間内にゴールできなかったら
+            else
+            {
+                // リザルトSuccess画像を表示
+                Result_False.SetActive(true);
+
+            }
 
         }
     }
