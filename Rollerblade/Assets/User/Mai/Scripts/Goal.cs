@@ -2,15 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Goal : MonoBehaviour
 {
+    // 時間の取得
+    public Timer timer;
+    //　テキスト制御
     public GameObject GoalText;
+    // スクロール制御
     public ScrollSystem scroll;
+    // 音楽
+    public AudioSource audioSource;
+    // リザルト制御
+    public GameObject Result_Success;
+    public GameObject Result_False;
 
     void Start()
     {
         // GOALテキストを非表示
         GoalText.SetActive(false);
+        // リザルト画像を非表示
+        Result_Success.SetActive(false);
+        Result_False.SetActive(false);
+        // BGMを開始
+        audioSource.Play();
     }
 
     void Update()
@@ -25,21 +40,25 @@ public class Goal : MonoBehaviour
         {
             // ScrollSystemコンポーネントを削除
             Destroy(scroll);
-            // GOALテキストを表示
-            GoalText.SetActive(true);
+            // 時間内にゴールしたら
+            if ( timer)
+            {
+                // BGMを停止
+                audioSource.Stop();
+                // GOALテキストを表示
+                GoalText.SetActive(true);
+                // リザルトSuccess画像を表示
+                Result_Success.SetActive(true);
+            }
+
+            // 時間内にゴールできなかったら
+            else
+            {
+                // リザルトSuccess画像を表示
+                Result_False.SetActive(true);
+
+            }
+
         }
     }
 }
-
- 
-   // public GameObject baseStage;
-
-       // if (collider.gameObject.tag == "Player")
-       // {
-           // Destroy(gameObject.GetComponent<scroll>());
-          // scroll.abled = !scroll.enabled;
-       // }
-       // if (baseStage.activeInHierarchy)
-       // {
-       //     scroll.enabled = !scroll.enabled;
-       // }

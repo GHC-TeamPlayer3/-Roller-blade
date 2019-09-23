@@ -6,14 +6,23 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    // タイマーテキストを表示
     public TextMeshProUGUI timerText;
-
+    // 制限時間
     public float totalTime;
-    int seconds;
+    // ゴールしたかどうか
+    bool goalFlag;
+    // 
+    private GameObject Result_Success;
+
+
 
     void Start()
     {
-        totalTime = 60f;
+        goalFlag = false;
+        totalTime = 50f;
+        // リザルト画像を非表示
+        Result_Success.SetActive(false);
     }
 
     void Update()
@@ -37,7 +46,23 @@ public class Timer : MonoBehaviour
             msecText = msecond.ToString();
 
 
-        timerText.text = secText + ":" + msecText;
+        //　制限時間が0秒以下なら何もしない
+        if (totalTime <= 0f)
+        {
+            timerText.text = "00:00";
+            goalFlag　= true;
+            return;
+        }
+        else
+        {
+            timerText.text = secText + ":" + msecText;
+        }
+
+        if ( goalFlag == true )
+        {
+            // リザルト画像を表示
+            Result_Success.SetActive(true);
+        }
 
         Debug.Log(totalTime);
 

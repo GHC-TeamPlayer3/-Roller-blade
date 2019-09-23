@@ -15,7 +15,7 @@ public class CoolBarCtrl : MonoBehaviour
 
     void Start()
     {
-        float maxCool = 5f;
+        float maxCool = 3.5f;
         float nowCool = 1f;
 
 
