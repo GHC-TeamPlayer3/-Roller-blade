@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3834712466198668863}
   - component: {fileID: 3834712466198668848}
   - component: {fileID: 1132231701285361306}
+  - component: {fileID: 314143486970709762}
   m_Layer: 8
   m_Name: Vending
   m_TagString: SpeedUp
@@ -106,3 +107,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.75}
   m_EdgeRadius: 0
+--- !u!114 &314143486970709762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834712466198668862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: 2
