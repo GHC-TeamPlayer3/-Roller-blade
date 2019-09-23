@@ -10,19 +10,26 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     // 制限時間
     public float totalTime;
-    // ゴールしたかどうか
-    bool goalFlag;
-    // 
-    private GameObject Result_Success;
+    // 音楽
+    public AudioSource audioBack;
+    public static AudioSource audioMiss;
+    // スクロール制御
+    public ScrollSystem scroll;
+    // リザルト制御
+    public GameObject Result_False;
+    // プレイヤーの動き制御
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
 
 
 
     void Start()
     {
-        goalFlag = false;
-        totalTime = 50f;
+        totalTime = 10f;
         // リザルト画像を非表示
-        Result_Success.SetActive(false);
+        Result_False.SetActive(false);
+        audioMiss.Stop();
     }
 
     void Update()
@@ -50,19 +57,26 @@ public class Timer : MonoBehaviour
         if (totalTime <= 0f)
         {
             timerText.text = "00:00";
-            goalFlag　= true;
-            return;
+            // ScrollSystemコンポーネントを削除
+            Destroy(scroll);
+            Destroy(player1);
+            Destroy(player2);
+            Destroy(player3);
+
+            // BGMを停止
+            audioBack.Stop();
+
+            // Miss効果音を再生
+            audioMiss.Play();
+
+            // リザルトFlase画像を表示
+            Result_False.SetActive(true);
         }
         else
         {
             timerText.text = secText + ":" + msecText;
         }
 
-        if ( goalFlag == true )
-        {
-            // リザルト画像を表示
-            Result_Success.SetActive(true);
-        }
 
         Debug.Log(totalTime);
 
