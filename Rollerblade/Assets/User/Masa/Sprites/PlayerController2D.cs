@@ -102,6 +102,8 @@ public class PlayerController2D : MonoBehaviour
                 speed = ActiveCharacter.m_AddSpeed;
             if (ActiveCharacter.GoundCollider.CompareTag("SpeedDown"))
                 speed = ActiveCharacter.m_DownSpeed;
+            if (ActiveCharacter.GoundCollider.CompareTag("SpeedObstacle"))
+                speed = ActiveCharacter.GoundCollider.GetComponent<GimickState>().GetDownSpeed();
             scrollSystem.AddSpeed(speed);
         }
 
