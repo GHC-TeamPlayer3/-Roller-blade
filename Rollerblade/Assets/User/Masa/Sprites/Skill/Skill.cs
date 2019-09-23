@@ -28,7 +28,7 @@ public class Skill : MonoBehaviour
     }
 
     //スキル発動
-    public virtual void Activate()
+    public virtual void Activate(PlayerController2D playerController2D)
     {
         if (!this.m_IsUse) return;
         m_TimeCount = 0f;

@@ -8,7 +8,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]
     private Character ActiveCharacter = null;
     [SerializeField]
-    private ScrollSystem scrollSystem;
+    public ScrollSystem scrollSystem;
     [SerializeField]
     private PlayerState playerState;
     [SerializeField]
@@ -79,7 +79,10 @@ public class PlayerController2D : MonoBehaviour
 
         //スキル
         if (Input.GetButtonDown("Fire3"))
-            ActiveCharacter.skill.Activate();
+        {
+            Debug.Log("スキルのボタン押し");
+            ActiveCharacter.skill.Activate(this);
+        }
 
         //死亡
         if (IsInvincible) ActiveCharacter.IsDead = false;
@@ -97,10 +100,11 @@ public class PlayerController2D : MonoBehaviour
                 return;
             }
             SetAcitiveCharacter(playerState.characters[0]);
-            InvincibleTime = 2.0f;
+            SetInvincibleTime(2.0f);
         }  
     }
 
+    
     //物理挙動
     private void FixedUpdate()
     {
@@ -166,5 +170,16 @@ public class PlayerController2D : MonoBehaviour
     public void CharacterEnd()
     {
         scrollSystem.Stop();
+    }
+
+    //無敵化
+    public void SetInvincibleTime(float time)
+    {
+        InvincibleTime = time;
+    }
+
+    public void Jump()
+    {
+        this.IsJump = true;
     }
 }
