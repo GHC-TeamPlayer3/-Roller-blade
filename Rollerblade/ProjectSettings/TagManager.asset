@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Obstacle
   - ChangePoint
+  - SpeedUp
+  - SpeedDown
+  - DeadObject
   layers:
   - Default
   - TransparentFX
