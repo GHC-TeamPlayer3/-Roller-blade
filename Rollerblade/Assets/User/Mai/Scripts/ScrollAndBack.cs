@@ -12,7 +12,10 @@ public class ScrollAndBack : MonoBehaviour
         if (transform.position.x <= endPositionX_)
         {
             // 開始の x 座標に戻します。
-            transform.position = new Vector3(startPositionX_, transform.position.y, transform.position.z);
+            transform.position = new Vector3
+                (startPositionX_ - (endPositionX_ - transform.position.x),
+                transform.position.y,
+                transform.position.z);
         }
     }
 }
