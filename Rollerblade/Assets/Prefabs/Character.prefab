@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3751569761270832734}
   - component: {fileID: 3751569761270832737}
   - component: {fileID: 3751569761270832735}
-  - component: {fileID: 4740782921976558776}
   - component: {fileID: 3751569761270832762}
   - component: {fileID: 5739103826593474992}
   m_Layer: 0
@@ -131,29 +130,13 @@ MonoBehaviour:
   m_CircleCol: {fileID: 0}
   GoundCollider: {fileID: 0}
   IsActiveCharacter: 0
+  IsAction: 0
   state: 0
   IsDoubleJump: 0
   CanDoubleJump: 0
   OnGround: 0
   scrollSystem: {fileID: 0}
-  forwardChara: {fileID: 0}
-  backChara: {fileID: 0}
---- !u!114 &4740782921976558776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3751569761270832741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0c5ca6e12f5e648961ffb144b8c406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CoolTime: 0
-  m_TimeCount: 0
-  m_IsUse: 0
-  playerState: {fileID: 0}
+  IsDead: 0
 --- !u!95 &3751569761270832762
 Animator:
   serializedVersion: 3

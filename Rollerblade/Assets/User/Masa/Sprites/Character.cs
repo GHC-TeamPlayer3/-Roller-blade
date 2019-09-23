@@ -26,14 +26,11 @@ public class Character : MonoBehaviour
     [SerializeField]
     public Skill skill;
 
-    [Header("Status")]
-    [SerializeField]
     private Rigidbody2D m_rigidbody2D;
-    [SerializeField, Tooltip("Animator")]
     private Animator m_animator;
-    [SerializeField]
+    [HideInInspector]
     public CircleCollider2D m_CircleCol;
-    [SerializeField]
+    [HideInInspector]
     public Collider2D GoundCollider;
 
     public enum State
@@ -45,16 +42,19 @@ public class Character : MonoBehaviour
     }
 
     //新規ステータス
+    [HideInInspector]
     public bool IsActiveCharacter = false;
+    [HideInInspector]
     public bool IsAction = false;
+    [HideInInspector]
     public State state = State.Idle;
 
+    [HideInInspector]
     public bool IsDoubleJump = false;   //二段ジャンプしたか
     public bool CanDoubleJump = false;  //二段ジャンプできるか
+    [HideInInspector]
     public bool OnGround = false;
     public ScrollSystem scrollSystem;
-    public Character forwardChara;
-    public Character backChara;
 
     public bool IsDead = false;
 
@@ -75,7 +75,10 @@ public class Character : MonoBehaviour
         if (OnGround)
             IsDoubleJump = false;
 
-        IsAction = Input.GetKey(KeyCode.A);
+        if (GoundCollider != null)
+            IsAction = GoundCollider.CompareTag("SpeedObstacle");
+        else
+            IsAction = false;
 
         //ステート
         if (!OnGround)
@@ -107,7 +110,7 @@ public class Character : MonoBehaviour
                 m_animator.SetBool("Action",true);
                 m_animator.SetBool("Jumping",false);
                 break;
-        } 
+        }
     }
 
     void FixedUpdate()
