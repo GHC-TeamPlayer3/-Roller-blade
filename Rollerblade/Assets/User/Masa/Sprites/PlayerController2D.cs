@@ -98,8 +98,7 @@ public class PlayerController2D : MonoBehaviour
             }
             SetAcitiveCharacter(playerState.characters[0]);
             InvincibleTime = 2.0f;
-        }
-            
+        }  
     }
 
     //物理挙動
