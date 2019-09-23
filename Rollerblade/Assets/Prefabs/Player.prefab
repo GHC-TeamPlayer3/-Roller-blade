@@ -42,8 +42,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4057791626564925499}
-  - component: {fileID: 4057791626564925498}
   - component: {fileID: 4057791626564925496}
+  - component: {fileID: 4057791626564925498}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -66,6 +66,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4057791626564925496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057791626564925493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4409e3678a51da345b16525338c5c851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveCharacter: {fileID: 5587506836942640247}
+  scrollSystem: {fileID: 0}
+  playerState: {fileID: 4057791626564925498}
+  speedRate: 1
+  camera: {fileID: 0}
 --- !u!114 &4057791626564925498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,26 +100,11 @@ MonoBehaviour:
     m_Bits: 256
   m_rayDistance: 0.5
   m_InvincibleTime: 0
+  pivot: {fileID: 0}
   characters:
   - {fileID: 5587506836942640247}
   - {fileID: 882823373308258602}
   - {fileID: 882823374329294639}
---- !u!114 &4057791626564925496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4057791626564925493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4409e3678a51da345b16525338c5c851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActiveCharacter: {fileID: 5587506836942640247}
-  scrollSystem: {fileID: 0}
-  playerState: {fileID: 4057791626564925498}
-  speedRate: 1
 --- !u!1001 &4057791625724065653
 PrefabInstance:
   m_ObjectHideFlags: 0
