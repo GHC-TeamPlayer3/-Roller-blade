@@ -6,20 +6,11 @@ public class InvincibleSkill : Skill
 {
     [Header("Parameter")]
     [SerializeField]
-    private PlayerState playerState;
+    private float InvincibleTime = 3.0f;
 
-    public override void Start()
-    {
-        base.Start();
-    }
-
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    public override void Activate()
+    public override void Activate(PlayerController2D playerController2D)
     {
         Debug.Log("Skill：無敵");
+        playerController2D.SetInvincibleTime(InvincibleTime);
     }
 }
