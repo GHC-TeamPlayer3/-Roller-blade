@@ -13,6 +13,10 @@ public class PlayerController2D : MonoBehaviour
     private PlayerState playerState;
     [SerializeField]
     private float speedRate = 0.0f;
+    [SerializeField]
+    private Camera camera;
+
+    private Vector3 cameraDefaultPos;
 
     private bool IsInvincible = false;
     private float InvincibleTime = 0.0f; //無敵時間
@@ -29,6 +33,9 @@ public class PlayerController2D : MonoBehaviour
     {
         if (ActiveCharacter != null)
             SetAcitiveCharacter(ActiveCharacter);
+
+        if(camera != null)
+            cameraDefaultPos = camera.transform.position;
     }
 
     // Update is called once per frame
@@ -41,6 +48,17 @@ public class PlayerController2D : MonoBehaviour
 
         //アクティブ無い
         if (ActiveCharacter == null) return;
+
+        if (camera != null)
+        {
+            Vector3 vector = new Vector3(
+                camera.transform.position.x, ActiveCharacter.transform.position.y, camera.transform.position.z);
+            if (vector.y <= cameraDefaultPos.y)
+                vector = new Vector3(vector.x, cameraDefaultPos.y, vector.z);
+
+            camera.transform.position = vector;
+        }
+
 
         //スクロールのスピードを増す
         scrollSystem.AddSpeed(ActiveCharacter.m_AddSpeed * Time.deltaTime * speedRate);
@@ -64,6 +82,7 @@ public class PlayerController2D : MonoBehaviour
             ActiveCharacter.skill.Activate();
 
         //死亡
+        if (IsInvincible) ActiveCharacter.IsDead = false;
         if (ActiveCharacter.IsDead && !IsInvincible)
         {
             //先頭を削除
@@ -79,8 +98,7 @@ public class PlayerController2D : MonoBehaviour
             }
             SetAcitiveCharacter(playerState.characters[0]);
             InvincibleTime = 2.0f;
-        }
-            
+        }  
     }
 
     //物理挙動

@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class chgSprite : MonoBehaviour
 {
     public GameObject grass;
+    public GameObject concreate;
 
     void Start()
     {
+        concreate.SetActive(false);
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class chgSprite : MonoBehaviour
         {
             // grassを削除
             Destroy(grass);
+            concreate.SetActive(true);
         }
     }
 }

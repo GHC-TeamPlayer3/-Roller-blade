@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 4569565847155230524, guid: 5ddf1955824ff6741b25346ea6012a6b,
         type: 3}
       propertyPath: m_NextScene
-      value: CourseSelect
+      value: MainSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ddf1955824ff6741b25346ea6012a6b, type: 3}
