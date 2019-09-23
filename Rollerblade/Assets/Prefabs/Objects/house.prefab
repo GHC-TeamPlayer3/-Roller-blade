@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1763838727}
   - component: {fileID: 1763838728}
+  - component: {fileID: 9089322879984634926}
   m_Layer: 8
   m_Name: RidePos_1
-  m_TagString: Untagged
+  m_TagString: SpeedDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +50,19 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.836248, y: 0.038475275}
   - {x: 2.4132633, y: -0.13878012}
+--- !u!114 &9089322879984634926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763838726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: 1.5
 --- !u!1 &1972844145
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,9 +122,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2073379806}
   - component: {fileID: 2073379807}
+  - component: {fileID: 4153266356674191735}
   m_Layer: 8
   m_Name: RidePos_2
-  m_TagString: Untagged
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +162,19 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.9096913, y: 0.1918273}
   - {x: 2.4132633, y: -0.13878012}
+--- !u!114 &4153266356674191735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073379805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: 1.5
 --- !u!1 &4285248848671951699
 GameObject:
   m_ObjectHideFlags: 0
