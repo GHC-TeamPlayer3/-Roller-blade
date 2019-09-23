@@ -10,6 +10,8 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]
     private ScrollSystem scrollSystem;
     [SerializeField]
+    private PlayerState playerState;
+    [SerializeField]
     private float speedRate = 0.0f;
 
     private bool IsInvincible = false;
@@ -35,6 +37,8 @@ public class PlayerController2D : MonoBehaviour
         IsInvincible = InvincibleTime >= 0.0f;
         InvincibleTime -= IsInvincible ? Time.deltaTime : 0.0f;
 
+        if (Input.GetKeyUp(KeyCode.Q)) this.ChangeActiveCharacter();
+
         //アクティブ無い
         if (ActiveCharacter == null) return;
 
@@ -59,6 +63,23 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown("Fire3"))
             ActiveCharacter.skill.Activate();
 
+        //死亡
+        if (ActiveCharacter.IsDead && !IsInvincible)
+        {
+            //先頭を削除
+            playerState.characters.RemoveAt(0);
+            Character character = ActiveCharacter;
+            character.GetComponent<Character>().enabled = false;
+            character.m_CircleCol.enabled = false;
+            character.transform.SetParent(scrollSystem.transform);
+            if (playerState.characters.Count == 0)
+            {
+                CharacterEnd();
+            }
+            SetAcitiveCharacter(playerState.characters[0]);
+            InvincibleTime = 2.0f;
+        }
+            
     }
 
     //物理挙動
@@ -67,7 +88,10 @@ public class PlayerController2D : MonoBehaviour
         if (ActiveCharacter == null) return;
         if (IsJump)
         {
-            rigidbody2D.AddForce(Vector2.up * ActiveCharacter.m_JumpPower);
+            Vector2 vector = Vector2.up * ActiveCharacter.m_JumpPower;
+            for (int n = 0; n < playerState.characters.Count; n++)
+                StartCoroutine(playerState.characters[n].AddRigidbody(vector, 0.2f * (float)n));
+
             IsJump = false;
         }
 
@@ -78,6 +102,8 @@ public class PlayerController2D : MonoBehaviour
                 speed = ActiveCharacter.m_AddSpeed;
             if (ActiveCharacter.GoundCollider.CompareTag("SpeedDown"))
                 speed = ActiveCharacter.m_DownSpeed;
+            if (ActiveCharacter.GoundCollider.CompareTag("SpeedObstacle"))
+                speed = ActiveCharacter.GoundCollider.GetComponent<GimickState>().GetDownSpeed();
             scrollSystem.AddSpeed(speed);
         }
 
@@ -85,6 +111,8 @@ public class PlayerController2D : MonoBehaviour
         m_velocity = rigidbody2D.velocity;
         m_velocity.y = Mathf.Clamp(m_velocity.y,-ActiveCharacter.m_MaxVelocity, ActiveCharacter.m_MaxVelocity);
         rigidbody2D.velocity = m_velocity;
+
+        
     }
 
     //アクティブなキャラクターを変更
@@ -97,5 +125,29 @@ public class PlayerController2D : MonoBehaviour
 
         scrollSystem.SetBaseSpeed(ActiveCharacter.m_Speed);
         rigidbody2D = ActiveCharacter.GetComponent<Rigidbody2D>();
+    }
+
+    public void ChangeActiveCharacter()
+    {
+        if (playerState.characters.Count == 1) return;
+        Character character = ActiveCharacter;
+        Vector3 pos = character.transform.localPosition;
+        character = playerState.characters[0];
+        playerState.characters.RemoveAt(0);
+        playerState.characters.Add(character); //先頭のやつを後方に
+
+        character = playerState.characters[0];
+        SetAcitiveCharacter(character);
+
+        for(int n = 0; n < playerState.characters.Count; n++)
+        {
+            playerState.characters[n].transform.localPosition = new Vector3(-1.5f * n + pos.x,pos.y,0.0f);
+        }
+    }
+
+    //全て死んだ
+    public void CharacterEnd()
+    {
+        scrollSystem.Stop();
     }
 }

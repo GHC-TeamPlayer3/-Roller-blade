@@ -21,6 +21,5 @@ public class InvincibleSkill : Skill
     public override void Activate()
     {
         Debug.Log("Skill：無敵");
-        playerState.SetInvincible(3.0f);
     }
 }
