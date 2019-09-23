@@ -40,18 +40,23 @@ public class Character : MonoBehaviour
     {
         Idle,
         Run,
-        Jump
+        Jump,
+        Action
     }
 
     //新規ステータス
     public bool IsActiveCharacter = false;
+    public bool IsAction = false;
     public State state = State.Idle;
 
     public bool IsDoubleJump = false;   //二段ジャンプしたか
     public bool CanDoubleJump = false;  //二段ジャンプできるか
     public bool OnGround = false;
     public ScrollSystem scrollSystem;
-    public GameObject forwardChara;
+    public Character forwardChara;
+    public Character backChara;
+
+    private Vector3 oldPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -70,9 +75,13 @@ public class Character : MonoBehaviour
         if (OnGround)
             IsDoubleJump = false;
 
+        IsAction = Input.GetKey(KeyCode.A);
+
         //ステート
         if (!OnGround)
             state = State.Jump;
+        else if (IsAction)
+            state = State.Action;
         else if (scrollSystem.GetSpeed() == 0.0f)
             state = State.Idle;
         else
@@ -84,6 +93,7 @@ public class Character : MonoBehaviour
             case State.Idle:
                 m_animator.SetBool("Jumping",false);
                 m_animator.SetBool("Running",false);
+                m_animator.SetBool("Action", false);
                 break;
             case State.Jump:
                 m_animator.SetBool("Jumping", true);
@@ -91,18 +101,18 @@ public class Character : MonoBehaviour
             case State.Run:
                 m_animator.SetBool("Running",true);
                 m_animator.SetBool("Jumping",false);
+                m_animator.SetBool("Action",false);
                 break;
-        }
+            case State.Action:
+                m_animator.SetBool("Action",true);
+                m_animator.SetBool("Jumping",false);
+                break;
+        } 
     }
 
     void FixedUpdate()
     {
         m_CircleCol.enabled = OnGround;
-        if (!IsActiveCharacter)
-        {
-            Vector2 vector = this.forwardChara.transform.position - this.transform.position;
-            m_rigidbody2D.AddForce(vector,ForceMode2D.Impulse);
-        }
     }
 
     //当たり判定
@@ -117,6 +127,7 @@ public class Character : MonoBehaviour
             if (gimickstate != null) speed = gimickstate.GetDownSpeed();
             scrollSystem.AddSpeed(speed);
         }
+
     }
 
     //地上に居るか
@@ -128,5 +139,12 @@ public class Character : MonoBehaviour
         Debug.DrawRay(ray2d.origin, ray2d.direction * m_playerState.m_rayDistance, Color.red);
         GoundCollider = raycastHit2D.collider;
         return raycastHit2D.collider != null && raycastHit2D.point.y < this.transform.position.y;
+    }
+
+    public IEnumerator AddRigidbody(Vector2 vector,float time)
+    {
+        yield return new WaitForSeconds(time);
+        this.m_rigidbody2D.AddForce(vector);
+        yield break;
     }
 }
