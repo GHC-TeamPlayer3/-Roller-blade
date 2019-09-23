@@ -109,8 +109,8 @@ GameObject:
   - component: {fileID: 741242585}
   - component: {fileID: 741242586}
   m_Layer: 8
-  m_Name: RidePos_3
-  m_TagString: Untagged
+  m_Name: RidePos_2
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,8 +158,8 @@ GameObject:
   - component: {fileID: 1073772725}
   - component: {fileID: 1073772726}
   m_Layer: 8
-  m_Name: RidePos_3
-  m_TagString: Untagged
+  m_Name: RidePos_2
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
