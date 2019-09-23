@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1557189777870767997}
   - component: {fileID: 1557189777870767996}
   m_Layer: 8
-  m_Name: Pole
+  m_Name: Pole_Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,8 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 3}
-  m_EdgeRadius: 0.4
+  m_Offset: {x: 0, y: 3.2}
+  m_EdgeRadius: 0.2
   m_Points:
   - {x: -3.155764, y: -0.09526634}
   - {x: 0.04749942, y: -0.1279509}

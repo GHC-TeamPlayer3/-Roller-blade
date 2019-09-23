@@ -98,11 +98,11 @@ public class Character : MonoBehaviour
     void FixedUpdate()
     {
         m_CircleCol.enabled = OnGround;
-        if (!IsActiveCharacter)
-        {
-            Vector2 vector = this.forwardChara.transform.position - this.transform.position;
-            m_rigidbody2D.AddForce(vector,ForceMode2D.Impulse);
-        }
+        //if (!IsActiveCharacter)
+        //{
+        //    Vector2 vector = this.forwardChara.transform.position - this.transform.position;
+        //    m_rigidbody2D.AddForce(vector,ForceMode2D.Impulse);
+        //}
     }
 
     //当たり判定
