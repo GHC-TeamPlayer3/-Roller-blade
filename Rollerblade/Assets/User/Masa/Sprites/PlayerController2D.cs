@@ -2,80 +2,100 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
 {
     [Header("Parameter")]
-    [SerializeField,Header("スキル")]
-    private Skill m_skill;
+    [SerializeField]
+    private Character ActiveCharacter = null;
+    [SerializeField]
+    private ScrollSystem scrollSystem;
+    [SerializeField]
+    private float speedRate = 0.0f;
 
-    [Header("Status")]
-    [SerializeField]
-    private float horizontalMove = 0f;
-    [SerializeField]
-    private bool m_isJump = false;
-    [SerializeField]
-    private bool m_isDoubleJump = false;
-    [SerializeField]
-    private bool m_onGround = false;
-    [SerializeField]
-    private Rigidbody2D m_rigidbody2D;
-    [SerializeField]
+    private bool IsInvincible = false;
+    private float InvincibleTime = 0.0f; //無敵時間
+
+    private bool IsJump = false;
+
+    //ActiveCharacterのComponent
+    private Rigidbody2D rigidbody2D = null;
+
     private Vector2 m_velocity;
-    [SerializeField]
-    private Character m_character;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.m_rigidbody2D = this.GetComponent<Rigidbody2D>();
-        this.m_character = this.GetComponent<Character>();
+        if (ActiveCharacter != null)
+            SetAcitiveCharacter(ActiveCharacter);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ステータス更新
-        this.m_onGround = m_character.Check_OnGround();
+        IsInvincible = InvincibleTime >= 0.0f;
+        InvincibleTime -= IsInvincible ? Time.deltaTime : 0.0f;
 
-        //入力取得
-        this.horizontalMove = this.GetHorizontal();
-        this.m_isJump = Input.GetButtonDown("Jump") && m_onGround;
+        //アクティブ無い
+        if (ActiveCharacter == null) return;
 
+        //スクロールのスピードを増す
+        scrollSystem.AddSpeed(ActiveCharacter.m_AddSpeed * Time.deltaTime * speedRate);
+
+        //ジャンプ
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (ActiveCharacter.OnGround)
+            {
+                IsJump = true;
+            }
+            else if (ActiveCharacter.CanDoubleJump && !ActiveCharacter.IsDoubleJump)
+            {
+                IsJump = true;
+                ActiveCharacter.IsDoubleJump = true;
+            }
+        }
+
+        //スキル
         if (Input.GetButtonDown("Fire3"))
-            m_skill.Activate();
+            ActiveCharacter.skill.Activate();
+
     }
 
     //物理挙動
     private void FixedUpdate()
     {
-        if (m_isJump)
+        if (ActiveCharacter == null) return;
+        if (IsJump)
         {
-            this.m_rigidbody2D.AddForce(Vector2.up *m_character.m_JumpPower);
-            m_isJump = false;
+            rigidbody2D.AddForce(Vector2.up * ActiveCharacter.m_JumpPower);
+            IsJump = false;
         }
 
-        //最高速度制限
-        m_velocity = this.m_rigidbody2D.velocity;
-        m_velocity.x = Mathf.Clamp(m_velocity.x, -m_character.m_MaxVelocity, m_character.m_MaxVelocity);
-        this.m_rigidbody2D.velocity = m_velocity;
+        if(ActiveCharacter.GoundCollider != null)
+        {
+            float speed = 0.0f;
+            if (ActiveCharacter.GoundCollider.CompareTag("SpeedUp"))
+                speed = ActiveCharacter.m_AddSpeed;
+            if (ActiveCharacter.GoundCollider.CompareTag("SpeedDown"))
+                speed = ActiveCharacter.m_DownSpeed;
+            scrollSystem.AddSpeed(speed);
+        }
+
+        //速度制限
+        m_velocity = rigidbody2D.velocity;
+        m_velocity.y = Mathf.Clamp(m_velocity.y,-ActiveCharacter.m_MaxVelocity, ActiveCharacter.m_MaxVelocity);
+        rigidbody2D.velocity = m_velocity;
     }
 
-    //水平入力を取得
-    float GetHorizontal()
+    //アクティブなキャラクターを変更
+    public void SetAcitiveCharacter(Character character)
     {
-        float horizontal = 0f;
-        horizontal = Input.GetAxis("Horizontal");
-        //horizontal = Input.GetAxisRaw("Horizontal");
-        return horizontal;
-    }
+        if (ActiveCharacter != null)
+            ActiveCharacter.IsActiveCharacter = false;
+        ActiveCharacter = character;
+        ActiveCharacter.IsActiveCharacter = true;
 
-    //垂直入力を取得
-    float GetVertical()
-    {
-        float vertical = 0f;
-        vertical = Input.GetAxis("Vertical");
-        //vertical = Input.GetAxisRaw("Vertical");
-        return vertical;
+        scrollSystem.SetBaseSpeed(ActiveCharacter.m_Speed);
+        rigidbody2D = ActiveCharacter.GetComponent<Rigidbody2D>();
     }
 }

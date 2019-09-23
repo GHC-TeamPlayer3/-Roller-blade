@@ -10,7 +10,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField,Tooltip("スピードアップするタグ")]
     public string m_SpeedTag;
     [SerializeField, Tooltip("地上との判定距離")]
-    public float m_rayDistance = 2.0f;
+    public float m_rayDistance = 0.4f;
 
     public bool m_IsInvincible { get; private set; }
 

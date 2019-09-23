@@ -29,7 +29,8 @@ public class TargetCamera : MonoBehaviour
                 vector = new Vector3(vector.x, DefaultPos.y, vector.z);
 
             this.transform.position = vector;
-            
         }
+        else
+            this.transform.position = DefaultPos;
     }
 }
