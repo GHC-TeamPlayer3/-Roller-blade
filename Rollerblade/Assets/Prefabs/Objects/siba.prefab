@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4697223594994844798}
   - component: {fileID: 4697223594994844795}
   - component: {fileID: 4697223594994844797}
+  - component: {fileID: 721667059}
   m_Layer: 9
   m_Name: siba
-  m_TagString: Untagged
+  m_TagString: SpeedDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4697223594994844799}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,3 +110,16 @@ EdgeCollider2D:
   - {x: 0.3419403, y: 0.0182714}
   - {x: 0.41809177, y: 0.19684644}
   - {x: 0.48, y: 0}
+--- !u!114 &721667059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697223594994844799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: -0.5
