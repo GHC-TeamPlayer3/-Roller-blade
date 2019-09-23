@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1481757633237363114}
   - component: {fileID: 1481757633237363115}
-  m_Layer: 0
-  m_Name: gimic_doro1
-  m_TagString: Untagged
+  - component: {fileID: 1866698761}
+  - component: {fileID: 1866698760}
+  m_Layer: 8
+  m_Name: Mud
+  m_TagString: SpeedDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481757633237363113}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -79,3 +81,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &1866698761
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481757633237363113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -0.73233414, y: -0.020904541}
+  - {x: 0.73233414, y: -0.020904303}
+--- !u!114 &1866698760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481757633237363113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: -1.5
