@@ -11,8 +11,9 @@ public class Goal : MonoBehaviour
     public GameObject GoalText;
     // スクロール制御
     public ScrollSystem scroll;
+    public GameObject backGround;
     // 音楽
-    public AudioSource audioSource;
+    public AudioSource audioBack;
     // リザルト制御
     public GameObject Result_Success;
 
@@ -23,7 +24,7 @@ public class Goal : MonoBehaviour
         // リザルト画像を非表示
         Result_Success.SetActive(false);
         // BGMを開始
-        audioSource.Play();
+        audioBack.Play();
         StartCoroutine(StopTimer());
     }
 
@@ -47,7 +48,9 @@ public class Goal : MonoBehaviour
             // ScrollSystemコンポーネントを削除
             Destroy(scroll);
             // BGMを停止
-            audioSource.Stop();
+            audioBack.Stop();
+            // 背景のスクロールを停止
+            Destroy(backGround);
             // GOALテキストを表示
             GoalText.SetActive(true);
             // リザルトSuccess画像を表示

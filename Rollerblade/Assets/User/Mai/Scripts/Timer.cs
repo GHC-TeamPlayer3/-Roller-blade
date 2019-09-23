@@ -8,11 +8,13 @@ public class Timer : MonoBehaviour
 {
     // タイマーテキストを表示
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerText_Result;
+
     // 制限時間
     public float totalTime;
     // 音楽
     public AudioSource audioBack;
-    public static AudioSource audioMiss;
+    public AudioSource audioMiss;
     // スクロール制御
     public ScrollSystem scroll;
     // リザルト制御
@@ -29,13 +31,17 @@ public class Timer : MonoBehaviour
         totalTime = 10f;
         // リザルト画像を非表示
         Result_False.SetActive(false);
+        timerText_Result.text = " ";
+        // リザルト音楽を非表示
         audioMiss.Stop();
+
+        // タイマーを停止
+        StartCoroutine("StopTimer");
     }
 
     void Update()
     {
         totalTime -= Time.deltaTime; //毎フレームの時間を減算.
-
         int second = (int)totalTime % 60;//秒.timeを60で割った余り.
         int msecond = (int)(totalTime * 100 % 100);
         string minText, secText, msecText;//分・秒を用意.
@@ -71,14 +77,19 @@ public class Timer : MonoBehaviour
 
             // リザルトFlase画像を表示
             Result_False.SetActive(true);
+            timerText_Result.text = "00:00";
         }
         else
         {
             timerText.text = secText + ":" + msecText;
+            transform.Translate(1.0f * Time.deltaTime, 0, 0);
         }
-
-
         Debug.Log(totalTime);
-
     }
+
+        // タイマー停止用のコルーチン
+        IEnumerator SampleCoroutine()
+        {
+            yield return new WaitForSeconds(100f);
+        }    
 }
