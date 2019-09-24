@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741242585}
   - component: {fileID: 741242586}
+  - component: {fileID: 1093838090295479600}
   m_Layer: 8
   m_Name: RidePos_2
   m_TagString: SpeedUp
@@ -147,6 +148,19 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.9859619, y: 2.4631352}
   - {x: 0.9412842, y: 1.5003452}
+--- !u!114 &1093838090295479600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741242584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: 1
 --- !u!1 &1073772724
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073772725}
   - component: {fileID: 1073772726}
+  - component: {fileID: 6781500992702378885}
   m_Layer: 8
   m_Name: RidePos_2
   m_TagString: SpeedUp
@@ -196,6 +211,19 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.9859619, y: 2.4631352}
   - {x: 0.9412842, y: 1.5003452}
+--- !u!114 &6781500992702378885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073772724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: 1
 --- !u!1 &1584104506
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +432,7 @@ GameObject:
   - component: {fileID: 4611130426738679711}
   m_Layer: 8
   m_Name: DekoBoko
-  m_TagString: Untagged
+  m_TagString: SpeedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
