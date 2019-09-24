@@ -21,7 +21,6 @@ public class PlayerState : MonoBehaviour
     void Start()
     {
         int n = 0;
-        characters.Clear();
         foreach(Character character in MainSelect.InstanceObjects)
         {
             character.m_playerState = this;

@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
 {
     // 時間の取得
     public Timer timer;
+    public bool goalFlag;
     //　テキスト制御
     public GameObject GoalText;
     // スクロール制御
@@ -25,13 +26,7 @@ public class Goal : MonoBehaviour
         Result_Success.SetActive(false);
         // BGMを開始
         audioBack.Play();
-    }
-
-    void StopTimer()
-    {
-        
-//        yield return new WaitForSecondsRealtime(50);
-
+        goalFlag = false;
     }
 
     void Update()
@@ -43,8 +38,10 @@ public class Goal : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            //
+            // 時間内にゴールした場合
             timer.StopTimer = true;
+            goalFlag = true;
+            
             // ScrollSystemコンポーネントを削除
             Destroy(scroll);
             // BGMを停止

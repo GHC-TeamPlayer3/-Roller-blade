@@ -6,13 +6,15 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public Goal goal;
+
     // タイマーテキストを表示
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timerText_Result;
 
     // 制限時間
     public float totalTime;
-   public bool StopTimer;
+    public bool StopTimer;
     // 音楽
     public AudioSource audioBack;
     public AudioSource audioMiss;
@@ -39,12 +41,15 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (StopTimer == false)
+
+        string minText, secText, msecText;//分・秒を用意
+
+        if (goal.goalFlag == true )
         {
             totalTime -= Time.deltaTime; //毎フレームの時間を減算.
             int second = (int)totalTime % 60;//秒.timeを60で割った余り.
             int msecond = (int)(totalTime * 100 % 100);
-            string minText, secText, msecText;//分・秒を用意.
+
             if (second < 10)
                 secText = "0" + second.ToString();//上に同じく.
             else
@@ -57,6 +62,34 @@ public class Timer : MonoBehaviour
                 msecText = msecond.ToString();
             else
                 msecText = msecond.ToString();
+            StopTimer = true;
+            timerText_Result.text = secText + ":" + msecText;
+            transform.Translate(1.0f * Time.deltaTime, 0, 0);
+        }
+
+
+        if (StopTimer == false)
+        {
+            totalTime -= Time.deltaTime; //毎フレームの時間を減算.
+            int second = (int)totalTime % 60;//秒.timeを60で割った余り.
+            int msecond = (int)(totalTime * 100 % 100);
+           
+            if (second < 10)
+                secText = "0" + second.ToString();//上に同じく.
+            else
+                secText = second.ToString();
+
+            if (msecond < 10)
+                msecText = "0" + msecond.ToString();
+
+            else if (msecond < 100)
+                msecText = msecond.ToString();
+            else
+                msecText = msecond.ToString();
+
+            timerText.text = secText + ":" + msecText;
+            transform.Translate(1.0f * Time.deltaTime, 0, 0);
+
 
             //　制限時間が0秒以下なら何もしない
             if (totalTime <= 0f)
@@ -77,20 +110,14 @@ public class Timer : MonoBehaviour
                 Result_False.SetActive(true);
                 timerText_Result.text = "00:00";
             }
-            else
-            {
-                timerText.text = secText + ":" + msecText;
-                transform.Translate(1.0f * Time.deltaTime, 0, 0);
-            }
+            
+          
         }
         Debug.Log(totalTime);
     }
     void MissMusic()
     {
-        if(totalTime <= 0f)
-        {
             // Miss効果音を再生
             audioMiss.Play();
-        }
     }  
 }
