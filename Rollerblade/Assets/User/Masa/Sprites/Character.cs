@@ -25,6 +25,8 @@ public class Character : MonoBehaviour
     [Space(8)]
     [SerializeField]
     public Skill skill;
+    [SerializeField]
+    public BladeState bladeState;
 
     private Rigidbody2D m_rigidbody2D;
     private Animator m_animator;
@@ -32,6 +34,13 @@ public class Character : MonoBehaviour
     public CircleCollider2D m_CircleCol;
     [HideInInspector]
     public Collider2D GoundCollider;
+
+    public enum BladeState
+    {
+        Red,
+        Blue,
+        Green
+    }
 
     public enum State
     {

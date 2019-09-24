@@ -81,7 +81,8 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown("Fire3"))
         {
             Debug.Log("スキルのボタン押し");
-            ActiveCharacter.skill.Activate(this);
+            if(ActiveCharacter.skill != null)
+                ActiveCharacter.skill.Activate(this);
         }
 
         //死亡
