@@ -2279,7 +2279,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 60:00
+  m_text: 50:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2409,6 +2409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 379963948}
+  playerCtrl: {fileID: 647353629}
   timerText: {fileID: 389863556}
   timerText_Result: {fileID: 1936287447}
   totalTime: 50
@@ -3773,6 +3774,18 @@ Transform:
   m_Father: {fileID: 1525075332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &647353629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4057791626564925496, guid: d9a0c1bccf34b1240a618cd3211fffef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1092631696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4409e3678a51da345b16525338c5c851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &658135773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1481757633237363114, guid: 5de93bf0a6d3d7144a39c910f6079e9c,
@@ -9024,7 +9037,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 60:00
+  m_text: 50:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

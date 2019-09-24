@@ -7,6 +7,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public Goal goal;
+    public PlayerController2D playerCtrl;
 
     // タイマーテキストを表示
     public TextMeshProUGUI timerText;
@@ -92,7 +93,7 @@ public class Timer : MonoBehaviour
 
 
             //　制限時間が0秒以下なら何もしない
-            if (totalTime <= 0f)
+            if (totalTime <= 0f || playerCtrl.IsEnd == true)
             {
                 timerText.text = "00:00";
                 // ScrollSystemコンポーネントを削除
