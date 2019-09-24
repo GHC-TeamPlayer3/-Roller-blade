@@ -27,6 +27,8 @@ public class Character : MonoBehaviour
     public Skill skill;
     [SerializeField]
     public BladeState bladeState;
+    [SerializeField]
+    private GameObject effect;
 
     private Rigidbody2D m_rigidbody2D;
     private Animator m_animator;
@@ -160,5 +162,11 @@ public class Character : MonoBehaviour
         yield return new WaitForSeconds(time);
         this.m_rigidbody2D.AddForce(vector);
         yield break;
+    }
+
+    public void SkillEffect()
+    {
+        GameObject instance = GameObject.Instantiate(effect,this.transform.position,Quaternion.identity,this.transform);
+        instance.transform.position += new Vector3(0.0f,0.0f,-1.0f);
     }
 }

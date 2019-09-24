@@ -26,6 +26,8 @@ public class PlayerState : MonoBehaviour
             character.m_playerState = this;
             character.scrollSystem = this.GetComponent<PlayerController2D>().scrollSystem;
             GameObject instance = GameObject.Instantiate(character.gameObject,new Vector3(-1.5f * n,0.0f,pivot.transform.position.z),Quaternion.identity,pivot.transform);
+            GameObject skillobject = GameObject.Instantiate(character.skill.gameObject);
+            instance.GetComponent<Character>().skill = skillobject.GetComponent<Skill>();
             characters.Add(instance.GetComponent<Character>());
             n++;
         }

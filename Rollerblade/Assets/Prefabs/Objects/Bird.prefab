@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4193772713730696061}
   - component: {fileID: 6490603439106168025}
   - component: {fileID: 219548430165020793}
+  - component: {fileID: 390212998612292087}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Obstacle
@@ -110,3 +111,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DownSpeed: -1.5
+--- !u!95 &390212998612292087
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154918365000124914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59f99e11376c9964daebce0da46c8892, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
