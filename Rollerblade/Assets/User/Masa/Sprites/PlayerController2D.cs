@@ -15,6 +15,7 @@ public class PlayerController2D : MonoBehaviour
     private float speedRate = 0.0f;
     [SerializeField]
     private Camera camera;
+    public bool IsEnd = false;
 
     private Vector3 cameraDefaultPos;
 
@@ -174,6 +175,7 @@ public class PlayerController2D : MonoBehaviour
     public void CharacterEnd()
     {
         scrollSystem.Stop();
+        this.IsEnd = true;
     }
 
     //無敵化
