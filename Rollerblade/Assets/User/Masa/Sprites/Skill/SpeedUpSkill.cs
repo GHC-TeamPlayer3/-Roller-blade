@@ -7,8 +7,11 @@ public class SpeedUpSkill : Skill
     [SerializeField]
     private float addSpeed = 4.0f;
 
-    public override void Activate(PlayerController2D playerController2D)
+    public override bool Activate(PlayerController2D playerController2D)
     {
+        Debug.Log("スピードアップ");
+        if (!base.Activate(playerController2D)) return false;
         playerController2D.scrollSystem.AddSpeed(addSpeed);
+        return true;
     }
 }

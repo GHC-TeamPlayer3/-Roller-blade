@@ -12,7 +12,7 @@ public class Skill : MonoBehaviour
     [SerializeField]
     private float m_TimeCount = 0.0f;
     [SerializeField]
-    private bool m_IsUse = false;
+    protected bool m_IsUse = true;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -28,10 +28,11 @@ public class Skill : MonoBehaviour
     }
 
     //スキル発動
-    public virtual void Activate(PlayerController2D playerController2D)
+    public virtual bool Activate(PlayerController2D playerController2D)
     {
-        if (!this.m_IsUse) return;
+        if (!this.m_IsUse) return false;
         m_TimeCount = 0f;
         Debug.Log("発動！！");
+        return true;
     }
 }

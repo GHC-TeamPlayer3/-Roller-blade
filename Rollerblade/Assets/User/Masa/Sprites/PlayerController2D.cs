@@ -81,23 +81,26 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown("Fire3"))
         {
             Debug.Log("スキルのボタン押し");
-            if(ActiveCharacter.skill != null)
-                ActiveCharacter.skill.Activate(this);
+            if(ActiveCharacter.skill != null){
+                if(ActiveCharacter.skill.Activate(this))
+                    ActiveCharacter.SkillEffect();
+            }  
         }
 
         //死亡
         if (IsInvincible) ActiveCharacter.IsDead = false;
         if (ActiveCharacter.IsDead && !IsInvincible)
         {
-            //先頭を削除
-            playerState.characters.RemoveAt(0);
             Character character = ActiveCharacter;
             character.GetComponent<Character>().enabled = false;
             character.m_CircleCol.enabled = false;
             character.transform.SetParent(scrollSystem.transform);
+            //先頭を削除
+            playerState.characters.RemoveAt(0);
             if (playerState.characters.Count == 0)
             {
                 CharacterEnd();
+                ActiveCharacter = null;
                 return;
             }
             SetAcitiveCharacter(playerState.characters[0]);

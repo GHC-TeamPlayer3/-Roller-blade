@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Mass: 1
   m_JumpPower: 400
   skill: {fileID: 0}
+  bladeState: 0
+  effect: {fileID: 1250008808759681070, guid: 8838f3ad8b284ba46b6b017b0a714c27, type: 3}
   m_CircleCol: {fileID: 0}
   GoundCollider: {fileID: 0}
   IsActiveCharacter: 0
