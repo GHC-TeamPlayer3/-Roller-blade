@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1557189777870767997}
   - component: {fileID: 1557189777870767996}
   - component: {fileID: 659986203186689662}
+  - component: {fileID: 2681768518065866504}
   m_Layer: 8
   m_Name: Pole_Bird
   m_TagString: SpeedUp
@@ -99,3 +100,16 @@ EdgeCollider2D:
   - {x: -3.5757022, y: 0}
   - {x: 0.04629159, y: -0.08563995}
   - {x: 3.3780897, y: -0.05646038}
+--- !u!114 &2681768518065866504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557189777870767994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f55bdc4720fe4fb0acf86806d8081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DownSpeed: 1.5

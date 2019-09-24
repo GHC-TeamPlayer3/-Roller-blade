@@ -25,12 +25,12 @@ public class Goal : MonoBehaviour
         Result_Success.SetActive(false);
         // BGMを開始
         audioBack.Play();
-        StartCoroutine(StopTimer());
     }
 
-    IEnumerator StopTimer()
+    void StopTimer()
     {
-        yield return new WaitForSecondsRealtime(50);
+        
+//        yield return new WaitForSecondsRealtime(50);
 
     }
 
@@ -43,8 +43,8 @@ public class Goal : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            // タイマーを停止
-            StopTimer();
+            //
+            timer.StopTimer = true;
             // ScrollSystemコンポーネントを削除
             Destroy(scroll);
             // BGMを停止
